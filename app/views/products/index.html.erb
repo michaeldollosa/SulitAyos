@@ -1,12 +1,12 @@
 
 <ul>
-    <% @products.each do |product| %>
-      <li>Product <%= product.id %><br />
-      Name: <%= product.name %><br />
-      Price: <%= product.price %><br />
-      Description:<%= product.description %><br />
-      Status: <%= product.status %><br />
-      <br />
-    <% end %>
+  <% @products.each do |product| %>
+  <li>Product: <%= product.id %><br />
+  Name: <%= product.name %><br />
+  Price: <%= product.price %><br />
+  Description:<%= product.description %><br />
+  Status: <%= product.status %><br />
+  <br />
+  <% end %>
 </ul>
 

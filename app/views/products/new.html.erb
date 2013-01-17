@@ -11,11 +11,10 @@
    <%= f.text_field :price %></div>
 
   <div><%= f.label :description %><br />
-  <%= f.text_field :description %></div>
+    <textarea rows = "4"><% :description %></textarea></div>
 
-  <div><%= f.label :status %><br />
-  <%= f.text_field :status %></div>
 
-  <div><%= f.submit "Add" %></div>
+
+  <div><%= f.submit "Add Product", class: "btn btn-inverse" %></div>
 <% end %>
 
