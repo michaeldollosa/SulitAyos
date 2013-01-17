@@ -1,0 +1,10 @@
+<% @user.products.each do |user| %>
+  <li>
+  <%= user.name %><br />
+  <%= user.price %><br />
+  <%= link_to "Edit", edit_product_path(user.id) , :method => "get", class: "btn btn-inverse"%>
+  <%= link_to "Delete", user , :method => "delete",
+                                        data: { confirm: "You sure?" }, class: "btn btn-inverse"%>
+  </li>
+<% end %>
+

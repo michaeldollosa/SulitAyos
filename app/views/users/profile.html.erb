@@ -1,0 +1,6 @@
+<h2>MY PROFILE</h2>
+<%= @user.email %><br />
+<%= render 'products/product_list' %>
+<%= link_to "Add Product", new_product_path, class: "btn btn-inverse" %>
+
+
