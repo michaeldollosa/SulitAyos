@@ -1,0 +1,7 @@
+<h2>SHOW PRODUCT</h2>
+<%= @product.name %><br />
+<%= @product.price %><br />
+<%= @product.description %><br />
+<%= @product.status %><br />
+<%= link_to "delete", @product , :method => "delete",
+                     data: { confirm: "You sure?" } %>
