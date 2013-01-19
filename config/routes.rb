@@ -4,8 +4,11 @@ Samp::Application.routes.draw do
       root :to => 'users#profile'
     end
   end
+
+  root :to => 'static_pages#home'
   resources :products
   resources :users
+  resources :static_pages
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
