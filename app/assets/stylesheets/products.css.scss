@@ -1,3 +1,26 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.prodlist{
+  display : block;
+  width : 400px;
+}
+body{
+  z-index: 1;
+}
+table{
+  table-layout: fixed;
+  width: 720px;
+}
+table td{
+  width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+table th{
+  width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

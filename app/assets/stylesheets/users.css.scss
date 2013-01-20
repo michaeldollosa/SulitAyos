@@ -1,3 +1,35 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.user_prod_list{
+  margin-top : 0px;
+  margin-right : 50px;
+  margin-left : 500px;
+}
+
+.user_profile{
+  position : absolute;
+  margin-left : 250px;
+  margin-top : 60px;
+}
+
+.user_img{
+  position :absolute;
+  margin-left : 10px;
+  margin-top : 70px;
+}
+
+.myprofile{
+  float: left;
+  margin-left: 80px
+}
+
+.myshop{
+  float: right;
+  margin-right: 400px;
+}
+
+.profilebody{
+  
+  margin-top: 80px;
+}

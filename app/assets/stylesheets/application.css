@@ -11,3 +11,39 @@
  *= require_self
  *= require_tree .
  */
+/** Header **/
+.navigation{
+  position : right;
+}
+
+/**User registration**/
+
+.appbody{
+  margin-top: 80px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.boxes{
+  margin-left : 10px;
+  margin-top : 0px;
+  padding-top : 0px;
+}
+
+.reg_but{
+  margin-top : 20px;
+  margin-left : 10px;
+}
+
+.reg_links{
+  margin-top: 20px;
+  margin-left: 15px;
+}
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+}
+
+
