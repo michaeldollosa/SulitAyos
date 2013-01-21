@@ -1,8 +1,7 @@
 class ProductsController < ApplicationController
   def index
-    @product = current_user.products
-    @product = Product.paginate(page: params[:page])
-
+    @products = Product.all
+    @products = Product.paginate(page: params[:page])
   end
   
   def new
@@ -34,4 +33,5 @@ class ProductsController < ApplicationController
     Product.find(params[:id]).destroy
     redirect_to root_path
   end
+  
 end

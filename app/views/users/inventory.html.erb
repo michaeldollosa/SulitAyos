@@ -1,6 +1,6 @@
 <div class = "prodlist1">
-    <h3>Trading House</h3>
-    <table class = "table table-striped">
+  <h3> My Inventory </h3>
+     <table class = "table table-striped">
       <tr>
         <th>Name</th>
         <th>Price</th>
@@ -16,10 +16,10 @@
       <td><%= products.description %></td>
       <td><%= products.description %></td>
       <td><%= products.status %></td>
-      <td><%= link_to "See User Profile", user_path(products.user_id)%></td>
-    </tr>
-  <% end %>
-      </table>
-      <%= will_paginate @products %>
+    <td><%= link_to "Edit", edit_product_path(products.id)%> &nbsp; &nbsp; <%= link_to "Delete", products , :method => "delete", data: { confirm: "You sure?" }%></td>
+  </tr>
+<% end %>
+  </table>
+  <%= will_paginate @products %>
 </div>
-    
+

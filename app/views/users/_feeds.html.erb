@@ -10,18 +10,18 @@
       <th>User</th>
       <th>Action</th>
     </tr>
-  <% @products.each do |products| %>
+  <% @feed_items.each do |products| %>
   <tr>
     <td><%= products.name %></td>
     <td><%= products.price %></td>
     <td><%= products.description %></td>
     <td><%= products.description %></td>
     <td><%= products.status %></td>
-    <td><%= products.user.firstname%> &nbsp; <%= products.user.lastname%></td>
-    <td><%= link_to "Edit", edit_product_path(products.id)%> &nbsp; &nbsp; <%= link_to "Delete", products , :method => "delete", data: { confirm: "You sure?" }%></td>
+    <td><%= products.user.firstname %> &nbsp; <% products.user.lastname %></td>
+    <td><%= link_to "Inquire", "#"%></td>
   </tr>
 <% end %>
   </table>
-  <%= will_paginate @products %>
+  <%= will_paginate @feed_items %>
 </div>
 

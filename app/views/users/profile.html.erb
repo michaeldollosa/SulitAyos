@@ -1,33 +1,13 @@
-<div class = "myprofile">
-  <h2>MY PROFILE </h2>
-</div>
-
-<div class = "myshop">
-  <h2> MY SHOP </h2>
-</div>
-
-<div class = "profilebody">
-  <div class = "user_img">
-    <img src="..." class="img-polaroid">
-  </div>
-
-  <div class = "user_profile">
-    <%= @user.firstname %><%= @user.lastname%><br />
-    <%= @user.email %><br />
-    <%= @user.address %><br />
-    <%= @user.birthday %><br />
-    <div class = "btn-group">
-      <a class = "btn btn-info"><i class = "icon-user icon-white"> Actions</a></i>
-      <a class = "btn btn-info dropdown-toggle" data-toggle = "dropdown"><span class = "caret"></span></a>
+<%= render 'upper'%>
       <ul class = "dropdown-menu">
-        <li><i class = "icon-pencil"></i>Edit Profile</li>
+        <li><%= link_to "Edit Profile", edit_user_registration_path(current_user) %></li>
         <li><%= link_to "Add Product", new_product_path%></li>
-        <li><i class = "icon-pencil"></i>Edit Profile</li>
       </ul>
     </div>
   </div>
   <div class = "user_prod_list">
-    <%= render 'products/product_list' %>
+    <h3>Feeds</h3>
+    <%= render 'feeds' %>
   </div>
 </div>
 

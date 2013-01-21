@@ -2,15 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .prodlist{
-  display : block;
-  width : 400px;
+  margin-top: 0px;
+  width : 840px;
+}
+.prodlist1{
+  margin-top: 50px;
+  width: 840px;
 }
 body{
   z-index: 1;
 }
 table{
   table-layout: fixed;
-  width: 720px;
+  width: 840px;
 }
 table td{
   width: 120px;

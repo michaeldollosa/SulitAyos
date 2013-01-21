@@ -7,7 +7,13 @@ Samp::Application.routes.draw do
 
   root :to => 'static_pages#home'
   resources :products
-  resources :users
+  resources :relationships
+  resources :users do
+    member do
+      get :following, :followers
+      get :inventory
+    end
+  end
   resources :static_pages
   
   # The priority is based upon order of creation:
