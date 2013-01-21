@@ -1,12 +1,25 @@
+<div class = "prodlist">
 
-<ul>
-  <% @products.each do |product| %>
-  <li>Product: <%= product.id %><br />
-  Name: <%= product.name %><br />
-  Price: <%= product.price %><br />
-  Description:<%= product.description %><br />
-  Status: <%= product.status %><br />
-  <br />
+    <table class = "table table-striped">
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Date Submitted</th>
+        <th>Date Expired</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    <% @products.each do |products| %>
+      <tr>
+      <td><%= products.name %></td>
+      <td><%= products.price %></td>
+      <td><%= products.description %></td>
+      <td><%= products.description %></td>
+      <td><%= products.status %></td>
+      <td><%= link_to "See User Profile", user_path(products.user_id)%></td>
+    </tr>
   <% end %>
-</ul>
-
+      </table>
+      <%= will_paginate @products %>
+</div>
+    
