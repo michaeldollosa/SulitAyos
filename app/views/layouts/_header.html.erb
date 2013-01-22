@@ -8,12 +8,19 @@
         <div class = "nav-collapse collapse">
           <ul class = "nav pull-left">
             <li> <%= link_to "Home", root_path %></li>
-            <li> <%= link_to "Help", '#' %></li>
-
             <!-- Session -->
             <% if user_signed_in? %>
             <li> <%= link_to "My Shop", inventory_user_path(current_user) %></li>
             <li> <%= link_to "Trading House", products_path %></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Messaging<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li> <%= link_to "Inbox", mails_path %></li>
+                <li> <%= link_to "Sent", index_sent_mail_path(current_user.id) %></li>
+                <li> <%= link_to "Read", read_mail_path(current_user.id) %></li>
+                <li> <%= link_to "Unread", unread_mail_path(current_user.id) %></li>
+              </ul>
+            </li>
             <li> <%= link_to "Sign Out", destroy_user_session_path, method: "delete" %></li>
             <% else %>
             <li> <%= link_to "Sign In", user_session_path, method: "post" %></li>

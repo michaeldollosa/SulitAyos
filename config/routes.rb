@@ -16,6 +16,13 @@ Samp::Application.routes.draw do
   end
   resources :static_pages
   
+  resources :mails do
+    member do
+      get 'index_sent'
+      get 'read'
+      get 'unread'
+    end
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

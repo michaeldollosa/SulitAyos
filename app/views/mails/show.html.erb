@@ -1,0 +1,12 @@
+<h2>SHOW MAIL</h2>
+From:<%= @sender.email %><br />
+To: <%= @recipient.email %><br />
+Subject: <%= @mail.subject %><br />
+<br />
+Message:<br />
+<%= @mail.msgbody %>
+<br /><br />
+<%= link_to "Reply", edit_mail_path, :method => "get", class: "btn btn-inverse"%>
+<%= link_to "Delete", @mail, :method => "delete",
+                      data: { confirm: "You sure?" }, class: "btn btn-inverse" %>
+

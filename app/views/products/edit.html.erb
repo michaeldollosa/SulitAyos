@@ -1,5 +1,5 @@
-
-<h2>EDIT PRODUCT</h2>
+<div class = "adjust">
+<h3>Edit Product</h3>
 
 <%= form_for(@product) do |f| %>
   
@@ -16,5 +16,6 @@
   <div><%= f.label :status %><br />
   <%= f.text_field :status %></div>
 
-  <div><%= f.submit "Save" %></div>
+  <div><%= f.submit "Save", class: "btn btn-info" %></div>
 <% end %>
+</div>

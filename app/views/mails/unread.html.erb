@@ -1,0 +1,15 @@
+<h2>UNREAD</h2>
+
+<ul>
+  <% @mails.each do |mail| %>
+    <li><%= mail.receiver_id %> |
+        <%= mail.subject %> |
+        <%= mail.created_at %>
+        <br />
+    <%= link_to "Show", mail_path(mail.id) %> 
+    <%= link_to "Delete", mail, :method => "delete",
+                      data: { confirm: "You sure?" }, class: "btn btn-inverse" %>
+
+  <% end %>
+  </ul>
+

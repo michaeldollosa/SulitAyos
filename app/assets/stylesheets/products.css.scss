@@ -9,22 +9,19 @@
   margin-top: 50px;
   width: 840px;
 }
-body{
-  z-index: 1;
-}
 table{
   table-layout: fixed;
   width: 840px;
 }
 table td{
-  width: 120px;
+  width: 160px;
   overflow: hidden;
   text-overflow: ellipsis;
 
 }
 
 table th{
-  width: 120px;
+  width: 160px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
