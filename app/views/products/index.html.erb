@@ -1,11 +1,11 @@
 <div class = "prodlist1">
-  <div class = "borderlist">
+  <div class = "borderlist2">
     <h3>Trading House</h3>
     <table class = "table">
       <tr>
         <th>Name</th>
         <th>Price</th>
-        <th>Date Submitted</th>
+        <th>Owner</th>
         <th>Status</th>
         <th>Action</th>
       </tr>
@@ -13,12 +13,13 @@
       <tr>
       <td><%= products.name %></td>
       <td><%= products.price %></td>
-      <td><%= products.created_at %></td>
+      <td><%= products.user.firstname %> <%= products.user.lastname%></td>
       <td><%= products.status %></td>
-      <td><%= link_to "See User Profile", user_path(products.user_id)%></td>
+      <td><%= link_to "See Product Profile", product_path(products.id)%></td>
     </tr>
   <% end %>
-      </table>
-      <%= will_paginate @products %>
+  </table>
+  <%= will_paginate @products %>
+
 </div>
 </div>

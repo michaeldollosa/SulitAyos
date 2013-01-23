@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'devise'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
+gem 'letsrate'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

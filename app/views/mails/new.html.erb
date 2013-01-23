@@ -1,23 +1,27 @@
-<h2>NEW MESSAGE</h2>
-
-
+<div class = "adjust">
+<h3>Compose Message</h3>
 
 <%= form_for(@mail) do |m| %>
-  <div>
-  <% unless params[:user_id] %>
-    <%= m.select :receiver_id, User.values_for_select %>
-  <% else %>
-    Recipient: <%= @recipient.email %>
-    <%= m.hidden_field :receiver_id, value: @recipient.id %>
-  <% end %>
+    <div>
+      <% unless params[:user_id] %>
+        <%= m.select :receiver_id, User.values_for_select %>
+      <% else %>
+        Recipient: <%= @recipient.email %>
+        <%= m.hidden_field :receiver_id, value: @recipient.id %>
+      <% end %>
+    </div>
+
+    <div><%= m.label :subject %><br />
+      <%=m.text_field :subject %></div>
+
+    <div><%= m.label :Message %><br />
+      <%=m.text_area  :msgbody %></div>
   </div>
 
-  <div><%= m.label :subject %><br />
-  <%=m.text_field :subject %></div>
+  <div>
+    <%= m.submit "Send Message", class: "btn btn-info" %>
+  </div>
 
-  <div><%= m.label :msgbody %><br />
-  <%=m.text_field  :msgbody %></div>
-
-  <div><%= m.submit "Send Message", class: "btn btn-inverse" %></div>
 <% end %>
 
+</div>

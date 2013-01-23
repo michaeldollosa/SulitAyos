@@ -1,0 +1,24 @@
+<div class = "prodlist1">
+  <div class = "borderlist2">
+  <h3><%= yield(:title) %></h3>
+  <table class = "table table-striped">
+    <tr>
+      <th>User</th>
+      <th>Subject</th>
+      <th>Date</th>
+      <th>Action</th>
+    </tr>
+  <% @mails.each do |mail| %>
+    <tr>
+      <td><%= mail.receiver.firstname %> <%= mail.receiver.lastname %></td>
+      <td><%= mail.subject %></td>
+      <td><%= mail.created_at %></td>
+      <td><%= link_to "Show", mail_path(mail.id) %>
+          <%= link_to "Delete", mail, :method => "delete",
+            data: { confirm: "You sure?" } %></td>
+    </tr>
+  <% end %>
+    </table>
+    <%= will_paginate @mails %>
+</div>
+

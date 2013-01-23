@@ -1,30 +1,40 @@
 class MailsController < ApplicationController
 def index #for received messages
     recipient_id = current_user.id
-    @mails = Mail.where(:receiver_id => recipient_id)
+    @mails = Mail.where(:receiver_id => recipient_id).paginate(page: params[:page], :per_page => 10)
   end
 
   def index_sent
     sender_id = current_user.id
-    @mails = Mail.where(:sender_id => sender_id) 
+    @mails = Mail.where(:sender_id => sender_id).paginate(page: params[:page], :per_page => 10)
+  
   end
 
   def read
     recipient_id = current_user.id
     @temp = Mail.where(:receiver_id => recipient_id)
-    @mails = @temp.where(:read => true)
+    @mails = @temp.where(:read => true).paginate(page: params[:page], :per_page => 10)
   end
 
   def unread
     recipient_id = current_user.id
     @temp = Mail.where(:receiver_id => recipient_id)
-    @mails = @temp.where(:read => !true)
+    @mails = @temp.where(:read => !true).paginate(page: params[:page], :per_page => 10)
+
   end
  
   def new
-    @recipient = User.where(id: params[:user_id]).first if params[:user_id]
-    # raise @recipient.to_yaml
-    @mail = Mail.new
+    if params[:product_id]
+      @product = Product.where(id: params[:product_id]).first
+      @recipient = @product.user
+      @mail = Mail.new
+      @mail.subject = "Inquiry on #{@product.name}"
+      @mail.msgbody = "Good Day! I would like to inquire about #{@product.name} "
+
+    else
+      @recipient = User.where(id: params[:user_id]).first if params[:user_id]
+      @mail = Mail.new
+    end
 
   end
 

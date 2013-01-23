@@ -5,9 +5,20 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  #ratings
+  letsrate_rateable "Credibility"
+  letsrate_rater
   # Setup accessible (or protected) attributes for your model
   attr_accessible :firstname, :lastname, :birthday, :address, :contact, :rating,
                   :aboutme, :email, :password, :password_confirmation, :remember_me
+
+  #validation
+  validates :firstname, presence: true
+  validates :lastname, presence: true
+  validates :birthday, presence: true
+  validates :address, presence: true
+  validates :contact, presence: true
+  
   # attr_accessible :title, :body
   #
   has_many :products
@@ -17,6 +28,10 @@ class User < ActiveRecord::Base
   has_many :followers, through: :reverse_relationships, source: :follower
 
   has_many :mails
+
+  def current_user?(user)
+     user == current_user
+  end
 
   def self.values_for_select
     all.map{ |u| [u.email, u.id] }

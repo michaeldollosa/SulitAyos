@@ -1,4 +1,6 @@
 Samp::Application.routes.draw do
+  match '/rate' => 'rater#create', :as => 'rate'
+
   devise_for :users do
     authenticated do
       root :to => 'users#profile'
