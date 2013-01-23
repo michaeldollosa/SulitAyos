@@ -12,6 +12,35 @@
  *= require_tree .
  */
 
+.articlebody{
+  margin-top: 50px;
+  padding: 10px;
+  border-top-width: 1.5px;
+  border-top-style: inset;
+}
+
+.logobody{
+  width: 1200px;
+  height: 400px;
+}
+.logoformat{
+  float:right;
+  margin-right: 150px;
+}
+
+.sulitayoslogo{
+  margin-left: 30px;
+}
+
+.quote{
+  margin-left: 100px;
+}
+.articleformat{
+  float:left;
+}
+.imgsizing{
+  height: 400px;
+}
 .layerproduct{
   margin: 10px;
   padding: 10px;
@@ -85,20 +114,33 @@
 .reg_but{
   margin-top : 20px;
 }
-  margin-left : 10px;
 
 .reg_links{
   margin-top: 20px;
   margin-left: 15px;
 }
 
-footer {
-  margin-top: 45px;
+.bodyfooter {
+  height: 250px;
+  margin-top: 100px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #999;
 }
 
+.twitterpic{
+  float: left;
+  z-index: 5;
+  margin-left: 450px;
+  bottom: -150px;
+}
+
+
+.fbpic{
+  z-index: 5;
+  bottom: -150px;
+}
+
+.cright{
+}
 .adjust{
   margin-top: 70px;
 }
